@@ -72,5 +72,5 @@ run.py - Entrypoint of app.
 ## Db design
 
 ```
-It only contains one table i.e exchange_rates and it's structure can be found in models.py
+App only contains one table i.e exchange_rates and it's structure can be found in models.py
 ```

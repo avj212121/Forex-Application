@@ -56,7 +56,7 @@ webapp--
        |
        forms.py - Defines forms used in app.
        |
-       models.py - Contains table structure. (Model in MVC)
+       models.py - Contains db design. (Model in MVC)
        |
        requirements.txt - Contains requirements needed by app. Docker installs all these dependency. 
        |
@@ -67,4 +67,10 @@ docker-compose.yml - Defines how app and db image interact with one another
 Dockerfile - Instructions to run the app.
 |
 run.py - Entrypoint of app.       
+```
+
+## Db design
+
+```
+It only contains one table i.e exchange_rates and it's structure can be found in models.py
 ```

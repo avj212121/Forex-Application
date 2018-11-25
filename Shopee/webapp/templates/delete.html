@@ -1,0 +1,11 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "index.html" %}
+{% block body %}
+<div class="content-section">
+  <div class="center">
+    <h1>Please enter the date</h1>
+    <br/>
+    {{ wtf.quick_form(form) }}
+  </div>
+</div>
+{% endblock %}

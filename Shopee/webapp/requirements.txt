@@ -1,0 +1,5 @@
+Flask
+mysqlclient
+flask-sqlalchemy
+flask-bootstrap
+Flask-WTF

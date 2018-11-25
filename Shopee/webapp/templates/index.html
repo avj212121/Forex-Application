@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Foreign Currency Exchange</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>Forex App</h1>
+            <p class="lead"></p>
+            <p><a class="btn btn-lg btn-success" href="{{ url_for('myapp.register') }}" role="button">Add exchange rate</a>
+            <p><a class="btn btn-lg btn-success" href="{{ url_for('myapp.track') }}" role="button">Track exchange rate</a>
+            <p><a class="btn btn-lg btn-success" href="{{ url_for('myapp.delete') }}" role="button">Delete Exchange rate</a>
+            </p>
+        </div>
+
+        {% block body %}
+        {% endblock %}
+
+
+    </div>
+</body>
+
+</html>

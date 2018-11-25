@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: rootpw
+       MYSQL_DATABASE: shopee
+       MYSQL_USER: shopee
+       MYSQL_PASSWORD: shopee
+
+   shopee:
+     depends_on:
+       - db
+     image: shopee:latest
+     build: .
+     ports:
+       - "80:5000"
+     restart: always
+     environment:
+       MYSQL_HOST: db:3306
+       MYSQL_USER: shopee
+       MYSQL_PASSWORD: shopee
+       MYSQL_DB: shopee
+volumes:
+    db_data:

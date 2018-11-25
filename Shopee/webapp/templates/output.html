@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block body %}
+<div class="content-section">
+  <div class="center">
+    {%if not rates %}
+        <h1>No data present for the date</h1>
+    {%else%}
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Rate</th>
+              <th scope="col">7-day average</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for i in range(rates|length) %}
+              <tr>
+                  <td>{{rates[i].date}}</td>
+                  <td>{{rates[i].from_country}}</td>
+                  <td>{{rates[i].to_country}}</td>
+                  {%if rates[i].rate is none%}
+                     <td>Insuffficient data</td>
+                  {%else%}
+                     <td>{{rates[i].rate}}</td>
+                  {% endif %}
+                 {%if average_list[i] == 0.00%}
+                     <td>Insuffficient data</td>
+                  {%else%}
+                     <td>
+                      {{average_list[i]}}
+                  </td>
+                  {% endif %}
+
+              </tr>
+
+          {% endfor %}
+          </tbody>
+        </table>
+     {% endif %}
+    <br/>
+  </div>
+</div>
+{% endblock %}
